@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    padding: 1.5rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+footer{
+    padding: 0.8rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+main{
+    padding: 1rem;
+    min-height: 100vh;
+}
+.containerGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'botones'
+    'principal'
+    'relacion';
+    gap: 10px;
+    width: 95%;
+    margin: 0 auto;
+}
+.botones{
+    grid-area: botones;
+    text-align: center;
+    width: 100%;
+    background-color: beige;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.botones h1{
+    padding: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.botones button{
+    padding: 0.8rem;
+    background-color: black;
+    border-style: none;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.botones #contador{
+    margin: 1rem;
+    font-size: 1rem;
+}
+.principal{
+    grid-area: principal;
+    background-color: bisque;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    visibility: hidden;
+
+}
+.principal img{
+    display: block;
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 0.4rem;
+}
+.principal h3{
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.relacionados{
+    grid-area: relacion;
+    background-color: bisque;
+    padding-top: 1rem;
+    gap: 1rem;
+    visibility: hidden;
+}
+.relacionados h2{
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.relacionados h3{
+    padding: 1rem;
+    font-size: 1rem;
+    text-decoration: underline;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.relacionados img{
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.botones div#contador p{
+    visibility: hidden;
+}
+
+/* ================= */
+/* 📱 MEDIA QUERIES */
+/* ================= */
+
+/* ==================================
+            768px
+=======================================0
+*/
+@media screen and (min-width:768px) {
+    .containerGrid {
+        width: 88%; 
+    }
+    .relacionados > div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .relacionados article img{
+        display: block; 
+        width: 100%;
+        margin: 0;
+    }
+    .botones button{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .botones p{
+        font-size: 1.5rem;
+    }
+
+       
+}
+/* ==================================
+            992px
+=======================================0
+*/
+
+@media screen and (min-width:992px) {
+    .containerGrid {
+        width: 80%;
+    }
+
+    .relacionados > div{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        align-items: start;
+    }
+    
+    .botones button{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* ==================================
+            1200px
+=======================================0
+*/
+
+@media screen and (min-width:1200px) {
+
+    .containerGrid {
+        width: 75%;
+    }
+    .principal img{
+        width: 60%;
+    }
+    footer{
+        margin-bottom: 0;
+    }
+    
+}
