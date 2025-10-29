@@ -63,7 +63,7 @@ const arrayViajes = [
     },
 ];
 
-const arraybotonesProvi = ['mar','cabaña', 'flotante','agua','estructura','arena', 'palmera','cielo', 'flechas','puente','montaña']
+//const arraybotonesProvi = ['mar','cabaña', 'flotante','agua','estructura','arena', 'palmera','cielo', 'flechas','puente','montaña']
 
 /*Eventos */
 document.addEventListener('click', (event) =>{
@@ -81,6 +81,7 @@ document.addEventListener('click', (event) =>{
 });
 
 /*Funciones */
+//Funcion que crea y luego manda los botones nuevos pero antes llama a la funcion conseguirBotones para conseguirlos
 const pintarBotones = () => {
     const arrayBotones = conseguirBontones();
     arrayBotones.forEach(element => {
@@ -91,7 +92,7 @@ const pintarBotones = () => {
     });
     botones.append(fragment);
 }
-
+//Filtra las imagenes para que solo aparescan dependiendo del tag
 const filtarImagenes = (tag) => {
     //COMO LO ESTOY HACIENDO SIN FILTER
     // let filtrado = [];
@@ -113,6 +114,8 @@ const filtarImagenes = (tag) => {
     //console.log(filtrado);
     return filtrado;
 };
+//pinta las imagenes depeiendo del tag y usando la funcion filtrarImagenes para poder filtrar dependiendo del tag
+//tambien usa la funcion Principal para pintar la imagen grande que seria la primera en el array filtrado(por ahora).
 const pintarImagenes = (tag) => {
     borrar(imagenes);
     const arrayFiltrado = filtarImagenes(tag);
@@ -138,6 +141,7 @@ const pintarImagenes = (tag) => {
     imagenes.append(fragment);
 
 }
+//pinta la imagen grande que es el primer obejeto del array filtrado
 const pintarPrincipal = (array) => {
     // Limpiar la zona principal
     borrar(principalD);
@@ -153,10 +157,11 @@ const pintarPrincipal = (array) => {
     divi.append(ima);
     principalD.append(divi);
 }
-
+//limpia las sectian al cada que genero todo 
 const borrar = (valor) =>{
     valor.innerHTML = "";
 }
+//cambia las imagenes dependiendo de de la grande a la que se clico usando un llamado y guardando y cambiando los datos
 const cambiarImagenes = (imagen) => {
     const imgPrincipal = document.querySelector('.principal img');
     
@@ -175,6 +180,7 @@ const cambiarImagenes = (imagen) => {
     tituloRela.textContent = tituloPrin;
 
 }
+//consigue los botones dependiendo de los tags del array viajes
 const conseguirBontones = () => {
     const caja = [];
     arrayViajes.forEach(obj => {
@@ -187,7 +193,7 @@ const conseguirBontones = () => {
     //console.log(filtrado);
     return filtrado;
 }
-
+//muestra las secciones ocultas para mejor visibilidad
 const mostrar = () =>{
     principalD.style.visibility = 'visible'
     relacionados.style.visibility = 'visible'
@@ -195,5 +201,6 @@ const mostrar = () =>{
 }
 
 /*Invocaciones */
+//llama a la funcion pintarbotones para que siempre se pinten al entrar a la pagina
 pintarBotones(); 
 });
